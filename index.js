@@ -8,7 +8,9 @@ const users = [
   { id: 3, name: "Jalak", role: "student" },
   { id: 4, name: "Rahul", role: "Teacher" },
   { id: 5, name: "Paras", role: "mentor" },
-  { id: 6, name: "Raj", role: "Teacher" }
+  { id: 6, name: "Raj", role: "Teacher" },
+  { id: 7, name: "Jenil", role: "Student" },
+  { id: 8, name: "Rudra", role: "Mentor" },
 ];
 
 app.get("/", (req, res) => {
@@ -17,6 +19,11 @@ app.get("/", (req, res) => {
 
 app.get("/users/test/:from_card", (req, res) => {
     console.log("jalak",req)
+    console.log("jalak",req.params);
+  res.status(200).json(users);
+});
+
+app.get("/users", (req, res) => {
   res.status(200).json(users);
 });
 
