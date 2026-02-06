@@ -3,27 +3,45 @@ const express = require("express");
 const app = express();
 
 const users = [
-  { id: 1, name: "Arjun", role: "student" },
-  { id: 2, name: "Priyesha", role: "mentor" },
-  { id: 3, name: "Jalak", role: "student" },
-  { id: 4, name: "Rahul", role: "Teacher" },
-  { id: 5, name: "Paras", role: "mentor" },
-  { id: 6, name: "Raj", role: "Teacher" },
-  { id: 7, name: "Jenil", role: "Student" },
-  { id: 8, name: "Rudra", role: "Mentor" },
-];
+  {
+    "studentName": "ABDUL HAQUE",
+    "University": "SUxCG 714",
+    "UniversityUID": "108444"
+  },
+  {
+    "studentName": "ADITYA KUMAR",
+    "University": "SUxCG 702",
+    "UniversityUID": "108716",
+  },
+  {
+    "studentName": "AMAN KUMAR",
+    "University": "SUxCG 702",
+    "UniversityUID": "108500"
+  },
+  {
+    "studentName": "AMRIT RAJ",
+    "University": "SUxCG 702",
+    "UniversityUID": "108587"
+  },
+  {
+    "studentName": "Jalak Palan",
+    "University": "SUxCG 702",
+    "UniversityUID": "108714"
+  }
+
+]
 
 app.get("/", (req, res) => {
   res.send("Express server is running");
 });
 
 app.get("/users/test/:from_card", (req, res) => {
-    console.log("jalak",req)
-    console.log("jalak",req.params);
+  console.log("jalak", req)
+  console.log("jalak", req.params);
   res.status(200).json(users);
 });
 
-app.get("/users", (req, res) => {
+app.get("/users/:UniversityUID", (req, res) => {
   res.status(200).json(users);
 });
 
